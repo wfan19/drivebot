@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<robot name="drivebot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="cylinder_inertia" params="mass r h">
+    <inertia  ixx="${mass*(3*r*r+h*h)/12}" ixy = "0" ixz = "0"
+              iyy="${mass*(3*r*r+h*h)/12}" iyz = "0"
+              izz="${mass*r*r/2}"
+    />
+  </xacro:macro>
+
+  <xacro:macro name="box_inertia" params="mass x y z">
+    <inertia  ixx="${mass*(y*y+z*z)/12}" ixy = "0" ixz = "0"
+              iyy="${mass*(x*x+z*z)/12}" iyz = "0"
+              izz="${mass*(x*x+z*z)/12}"
+    />
+  </xacro:macro>
+
+  <xacro:macro name="sphere_inertia" params="mass r">
+    <inertia  ixx="${2*mass*r*r/5}" ixy = "0" ixz = "0"
+              iyy="${2*mass*r*r/5}" iyz = "0"
+              izz="${2*mass*r*r/5}"
+    />
+  </xacro:macro>
+
+  <xacro:macro name="boxLink" params="name mass x y z color:=grey">
+    <link name="${name}_link">
+      <inertia>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="${mass}"/>
+        <xacro:box_inertia mass="${mass}" x="${x}" y="${y}" z="${z}"/>
+      </inertia>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="${x} ${y} ${z}" />
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${x} ${y} ${z}"/>
+        </geometry>
+        <material name="grey"/>
+      </visual>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="cylinderLink" params="name mass r h color:=grey">
+    <link name="${name}_link">
+      <inertia>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="${mass}"/>
+        <xacro:cylinder_inertia mass="${mass}" r="${r}" h="${h}"/>
+      </inertia>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="${r}" length="${h}"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="${r}" length="${h}"/>
+        </geometry>
+        <material name="${color}"/>
+      </visual>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="sphereLink" params="name mass r color:=grey">
+    <link name="${name}_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="${mass}" />
+        <xacro:sphere_inertia mass="${mass}" r="${r}" />
+      </inertial>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="${r}" />
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="${r}"/>
+        </geometry>
+        <material name="${color}"/>
+      </visual>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="joint_transmission" params="joint_name reduction:=10">
+    <transmission name="${joint_name}_transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${joint_name}_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${joint_name}_servo">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>${reduction}</mechanicalReduction>
+      </actuator>
+    </transmission>
+  </xacro:macro>
+</robot>

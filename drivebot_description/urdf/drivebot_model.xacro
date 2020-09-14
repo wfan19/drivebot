@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<robot name="drivebot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find drivebot_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find drivebot_description)/urdf/macros.xacro" />
+
+  <!-- X = front/back, Y = right/left, Z = up/down  -->
+  <xacro:property name="bodyX" value="0.6" />
+  <xacro:property name="bodyY" value="0.4" />
+  <xacro:property name="bodyZ" value="0.2" />
+  <xacro:property name="bodyMass" value="5" />
+
+  <xacro:property name="wheelR" value="${0.1 + 0.1}" />
+  <xacro:property name="wheelH" value="0.1" />
+  <xacro:property name="wheelMass" value="1" />
+
+  <xacro:property name="casterR" value="${wheelR}" />
+  <xacro:property name="casterMass" value="${1}" />
+
+  <link name="base_link" />
+
+  <xacro:boxLink name="body" mass="${bodyMass}" x="${bodyX}" y="${bodyY}" z="${bodyZ}" color="orange" />
+  <joint name="base_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="body_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <gazebo reference="body_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <xacro:cylinderLink name="leftWheel" mass="${wheelMass}" r="${wheelR}" h="${wheelH}" color="red" />
+  <joint name="leftWheel_joint" type="continuous">
+    <parent link="body_link" />
+    <child link="leftWheel_link" />
+    <origin xyz="${-bodyX/4} ${-bodyY/2 - wheelH/2} 0" rpy="${pi/2} 0 0" />
+  </joint>
+  <gazebo reference="leftWheel_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <xacro:cylinderLink name="rightWheel" mass="${wheelMass}" r="${wheelR}" h="${wheelH}" color="green" />
+  <joint name="rightWheel_joint" type="continuous">
+    <parent link="body_link" />
+    <child link="rightWheel_link" />
+    <origin xyz="${-bodyX/4} ${bodyY/2 + wheelH/2} 0" rpy="${-pi/2} 0 0" />
+  </joint>
+  <gazebo reference="rightWheel_link">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <xacro:sphereLink name="caster" mass="${casterMass}" r="${casterR}" color="black" />
+  <joint name="caster_joint" type="fixed">
+    <parent link="body_link" />
+    <child link="caster_link" />
+    <origin xyz="${bodyX/4} 0 0" rpy="0 0 0" />
+  </joint>
+  <gazebo reference="rightWheel_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+</robot>
