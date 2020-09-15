@@ -14,7 +14,7 @@
   <xacro:property name="wheelH" value="0.1" />
   <xacro:property name="wheelMass" value="1" />
 
-  <xacro:property name="casterR" value="${wheelR}" />
+  <xacro:property name="casterR" value="${(wheelR - bodyZ / 2) / 2}" />
   <xacro:property name="casterMass" value="${1}" />
 
   <link name="base_link" />
@@ -57,9 +57,9 @@
   <joint name="caster_joint" type="fixed">
     <parent link="body_link" />
     <child link="caster_link" />
-    <origin xyz="${bodyX/4} 0 0" rpy="0 0 0" />
+    <origin xyz="${bodyX/4} 0 ${-(bodyZ/2 + casterR)}" rpy="0 0 0" />
   </joint>
-  <gazebo reference="rightWheel_link">
+  <gazebo reference="caster_link">
     <material>Gazebo/Black</material>
   </gazebo>
 

@@ -24,11 +24,11 @@
 
   <xacro:macro name="boxLink" params="name mass x y z color:=grey">
     <link name="${name}_link">
-      <inertia>
+      <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <mass value="${mass}"/>
         <xacro:box_inertia mass="${mass}" x="${x}" y="${y}" z="${z}"/>
-      </inertia>
+      </inertial>
 
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -49,11 +49,11 @@
 
   <xacro:macro name="cylinderLink" params="name mass radius height r:=0 p:=0 y:=0 color:=grey">
     <link name="${name}_link">
-      <inertia>
+      <inertial>
         <origin xyz="0 0 0" rpy="${r} ${p} ${y}"/>
         <mass value="${mass}"/>
         <xacro:cylinder_inertia mass="${mass}" r="${radius}" h="${height}"/>
-      </inertia>
+      </inertial>
 
       <collision>
         <origin xyz="0 0 0" rpy="${r} ${p} ${y}"/>
