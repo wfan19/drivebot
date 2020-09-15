@@ -29,22 +29,26 @@
     <material>Gazebo/Orange</material>
   </gazebo>
 
-  <xacro:cylinderLink name="leftWheel" mass="${wheelMass}" r="${wheelR}" h="${wheelH}" color="red" />
+  <xacro:cylinderLink
+      name="leftWheel" mass="${wheelMass}" radius="${wheelR}" height="${wheelH}" color="red" p ="${pi/2}" />
   <joint name="leftWheel_joint" type="continuous">
     <parent link="body_link" />
     <child link="leftWheel_link" />
-    <origin xyz="${-bodyX/4} ${-bodyY/2 - wheelH/2} 0" rpy="${pi/2} 0 0" />
+    <origin xyz="${-bodyX/4} ${bodyY/2 + wheelH/2} 0" rpy="0 0 ${pi/2}" />
   </joint>
+  <xacro:jointTransmission name="leftWheel" />
   <gazebo reference="leftWheel_link">
     <material>Gazebo/Red</material>
   </gazebo>
 
-  <xacro:cylinderLink name="rightWheel" mass="${wheelMass}" r="${wheelR}" h="${wheelH}" color="green" />
+  <xacro:cylinderLink
+      name="rightWheel" mass="${wheelMass}" radius="${wheelR}" height="${wheelH}" color="green" p ="${pi/2}"/>
   <joint name="rightWheel_joint" type="continuous">
     <parent link="body_link" />
     <child link="rightWheel_link" />
-    <origin xyz="${-bodyX/4} ${bodyY/2 + wheelH/2} 0" rpy="${-pi/2} 0 0" />
+    <origin xyz="${-bodyX/4} ${-bodyY/2 - wheelH/2} 0" rpy="0 0 ${pi/2}" />
   </joint>
+  <xacro:jointTransmission name="rightWheel" />
   <gazebo reference="rightWheel_link">
     <material>Gazebo/Green</material>
   </gazebo>

@@ -6,6 +6,10 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /RobotModel1
+        - /RobotModel1/Links1
+        - /RobotModel1/Links1/leftWheel_link1
+        - /RobotModel1/Links1/rightWheel_link1
       Splitter Ratio: 0.5
     Tree Height: 549
   - Class: rviz/Selection
@@ -66,9 +70,24 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        test_link:
+        body_link:
           Alpha: 1
           Show Axes: false
+          Show Trail: false
+          Value: true
+        caster_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        leftWheel_link:
+          Alpha: 0.4000000059604645
+          Show Axes: true
+          Show Trail: false
+          Value: true
+        rightWheel_link:
+          Alpha: 0.4000000059604645
+          Show Axes: true
           Show Trail: false
           Value: true
       Name: RobotModel
@@ -105,7 +124,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 10
+      Distance: 1.6180145740509033
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -120,10 +139,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4003983736038208
+      Pitch: 0.2303985059261322
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.6953977942466736
+      Yaw: 2.765409469604492
     Saved: ~
 Window Geometry:
   Displays:
@@ -142,4 +161,4 @@ Window Geometry:
     collapsed: false
   Width: 1200
   X: 60
-  Y: 24
+  Y: 0

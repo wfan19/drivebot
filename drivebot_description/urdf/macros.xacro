@@ -47,25 +47,25 @@
     </link>
   </xacro:macro>
 
-  <xacro:macro name="cylinderLink" params="name mass r h color:=grey">
+  <xacro:macro name="cylinderLink" params="name mass radius height r:=0 p:=0 y:=0 color:=grey">
     <link name="${name}_link">
       <inertia>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="${r} ${p} ${y}"/>
         <mass value="${mass}"/>
-        <xacro:cylinder_inertia mass="${mass}" r="${r}" h="${h}"/>
+        <xacro:cylinder_inertia mass="${mass}" r="${radius}" h="${height}"/>
       </inertia>
 
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="0 0 0" rpy="${r} ${p} ${y}"/>
         <geometry>
-          <cylinder radius="${r}" length="${h}"/>
+          <cylinder radius="${radius}" length="${height}"/>
         </geometry>
       </collision>
 
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="${r} ${p} ${y}"/>
         <geometry>
-          <cylinder radius="${r}" length="${h}"/>
+          <cylinder radius="${radius}" length="${height}"/>
         </geometry>
         <material name="${color}"/>
       </visual>
@@ -97,13 +97,13 @@
     </link>
   </xacro:macro>
 
-  <xacro:macro name="joint_transmission" params="joint_name reduction:=10">
-    <transmission name="${joint_name}_transmission">
+  <xacro:macro name="jointTransmission" params="name reduction:=10">
+    <transmission name="${name}_transmission">
       <type>transmission_interface/SimpleTransmission</type>
-      <joint name="${joint_name}_joint">
+      <joint name="${name}_joint">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
-      <actuator name="${joint_name}_servo">
+      <actuator name="${name}_servo">
         <hardwareInterface>EffortJointInterface</hardwareInterface>
         <mechanicalReduction>${reduction}</mechanicalReduction>
       </actuator>
