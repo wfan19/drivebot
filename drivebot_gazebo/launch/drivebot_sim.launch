@@ -5,7 +5,7 @@
   <!-- Load the URDF into the ROS Parameter Server -->
   <param name="drivebot/robot_description"
          command="$(find xacro)/xacro --inorder '$(find drivebot_description)/urdf/drivebot_model.xacro'" />
-  
+
   <!-- gazebo_ros options -->
   <arg name="paused" default="true"/>
   <arg name="use_sim_time" default="true"/>
