@@ -97,14 +97,13 @@
     </link>
   </xacro:macro>
 
-  <xacro:macro name="jointTransmission" params="name reduction:=10">
+  <xacro:macro name="jointTransmission" params="name reduction:=1">
     <transmission name="${name}_transmission">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${name}_joint">
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
       </joint>
       <actuator name="${name}_servo">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
         <mechanicalReduction>${reduction}</mechanicalReduction>
       </actuator>
     </transmission>

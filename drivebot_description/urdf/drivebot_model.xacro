@@ -5,13 +5,13 @@
   <xacro:include filename="$(find drivebot_description)/urdf/macros.xacro" />
 
   <!-- X = front/back, Y = right/left, Z = up/down  -->
-  <xacro:property name="bodyX" value="0.6" />
-  <xacro:property name="bodyY" value="0.4" />
+  <xacro:property name="bodyX" value="0.9" />
+  <xacro:property name="bodyY" value="0.7" />
   <xacro:property name="bodyZ" value="0.2" />
   <xacro:property name="bodyMass" value="5" />
 
-  <xacro:property name="wheelR" value="${0.1 + 0.1}" />
-  <xacro:property name="wheelH" value="0.1" />
+  <xacro:property name="wheelR" value="${0.1}" />
+  <xacro:property name="wheelH" value="0.05" />
   <xacro:property name="wheelMass" value="1" />
 
   <xacro:property name="casterR" value="${(wheelR - bodyZ / 2) / 2}" />
@@ -30,37 +30,67 @@
   </gazebo>
 
   <xacro:cylinderLink
-      name="leftWheel" mass="${wheelMass}" radius="${wheelR}" height="${wheelH}" color="red" p ="${pi/2}" />
-  <joint name="leftWheel_joint" type="continuous">
+      name="leftRearWheel" mass="${wheelMass}" radius="${wheelR}" height="${wheelH}" color="red" p ="${pi/2}" />
+  <joint name="leftRearWheel_joint" type="continuous">
     <parent link="body_link" />
-    <child link="leftWheel_link" />
-    <origin xyz="${-bodyX/4} ${bodyY/2 + wheelH/2} 0" rpy="0 0 ${pi/2}" />
+    <child link="leftRearWheel_link" />
+    <origin xyz="${-bodyX/4} ${bodyY/2 + wheelH/2} ${-bodyZ/2}" rpy="0 0 ${pi/2}" />
   </joint>
-  <xacro:jointTransmission name="leftWheel" />
-  <gazebo reference="leftWheel_link">
+  <xacro:jointTransmission name="leftRearWheel" />
+  <gazebo reference="leftRearWheel_link">
     <material>Gazebo/Red</material>
+    <mu1 value="1.0"/>
+    <mu2 value="1.0"/>
+    <kp value="10000000.0" />
+    <kd value="1.0" />
   </gazebo>
 
   <xacro:cylinderLink
-      name="rightWheel" mass="${wheelMass}" radius="${wheelR}" height="${wheelH}" color="green" p ="${pi/2}"/>
-  <joint name="rightWheel_joint" type="continuous">
+      name="rightRearWheel" mass="${wheelMass}" radius="${wheelR}" height="${wheelH}" color="green" p ="${pi/2}"/>
+  <joint name="rightRearWheel_joint" type="continuous">
     <parent link="body_link" />
-    <child link="rightWheel_link" />
-    <origin xyz="${-bodyX/4} ${-bodyY/2 - wheelH/2} 0" rpy="0 0 ${pi/2}" />
+    <child link="rightRearWheel_link" />
+    <origin xyz="${-bodyX/4} ${-bodyY/2 - wheelH/2} ${-bodyZ/2}" rpy="0 0 ${pi/2}" />
   </joint>
-  <xacro:jointTransmission name="rightWheel" />
-  <gazebo reference="rightWheel_link">
+  <xacro:jointTransmission name="rightRearWheel" />
+  <gazebo reference="rightRearWheel_link">
     <material>Gazebo/Green</material>
+    <mu1 value="1.0"/>
+    <mu2 value="1.0"/>
+    <kp value="10000000.0" />
+    <kd value="1.0" />
   </gazebo>
 
-  <xacro:sphereLink name="caster" mass="${casterMass}" r="${casterR}" color="black" />
-  <joint name="caster_joint" type="fixed">
+  <xacro:cylinderLink
+      name="leftFrontWheel" mass="${wheelMass}" radius="${wheelR}" height="${wheelH}" color="red" p ="${pi/2}" />
+  <joint name="leftFrontWheel_joint" type="continuous">
     <parent link="body_link" />
-    <child link="caster_link" />
-    <origin xyz="${bodyX/4} 0 ${-(bodyZ/2 + casterR)}" rpy="0 0 0" />
+    <child link="leftFrontWheel_link" />
+    <origin xyz="${bodyX/4} ${bodyY/2 + wheelH/2} ${-bodyZ/2}" rpy="0 0 ${pi/2}" />
   </joint>
-  <gazebo reference="caster_link">
-    <material>Gazebo/Black</material>
+  <xacro:jointTransmission name="leftFrontWheel" />
+  <gazebo reference="leftFrontWheel_link">
+    <material>Gazebo/Red</material>
+    <mu1 value="1.0"/>
+    <mu2 value="1.0"/>
+    <kp value="10000000.0" />
+    <kd value="1.0" />
+  </gazebo>
+
+  <xacro:cylinderLink
+      name="rightFrontWheel" mass="${wheelMass}" radius="${wheelR}" height="${wheelH}" color="green" p ="${pi/2}"/>
+  <joint name="rightFrontWheel_joint" type="continuous">
+    <parent link="body_link" />
+    <child link="rightFrontWheel_link" />
+    <origin xyz="${bodyX/4} ${-bodyY/2 - wheelH/2} ${-bodyZ/2}" rpy="0 0 ${pi/2}" />
+  </joint>
+  <xacro:jointTransmission name="rightFrontWheel" />
+  <gazebo reference="rightFrontWheel_link">
+    <material>Gazebo/Green</material>
+    <mu1 value="1.0"/>
+    <mu2 value="1.0"/>
+    <kp value="10000000.0" />
+    <kd value="1.0" />
   </gazebo>
 
   <!-- ros_control plugin -->
