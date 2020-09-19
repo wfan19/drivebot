@@ -1,12 +1,17 @@
 <launch>
+<!-- TODO Load a world file? -->
+<!-- TODO Spawn the model above the ground -->
 
-  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="drivebot/robot_description"
+         command="$(find xacro)/xacro --inorder '$(find drivebot_description)/urdf/drivebot_model.xacro'" />
+  
+  <!-- gazebo_ros options -->
   <arg name="paused" default="true"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
   <arg name="debug" default="true"/>
-
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find drivebot_gazebo)/worlds/drivebot.world"/>
@@ -16,13 +21,6 @@
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="headless" value="$(arg headless)"/>
   </include>
-
-<!-- TODO Load a world file? -->
-<!-- TODO Spawn the model above the ground -->
-
-  <!-- Load the URDF into the ROS Parameter Server -->
-  <param name="drivebot/robot_description"
-         command="$(find xacro)/xacro --inorder '$(find drivebot_description)/urdf/drivebot_model.xacro'" />
 
   <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
@@ -44,5 +42,6 @@
     <param name="rate" value="50" />
   </node>
 
+  <include file="$(find drivebot_localization)/launch/localization.launch" />
 
 </launch>
