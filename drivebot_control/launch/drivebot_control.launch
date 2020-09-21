@@ -9,4 +9,6 @@
         args="joint_state_controller
 					  drive_controller"/>
 
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $$(find drivebot_control)/drivebot.rviz" />
+
 </launch>
