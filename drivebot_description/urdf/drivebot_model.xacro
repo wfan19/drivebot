@@ -105,7 +105,7 @@
 
     <plugin name="gps_plugin" filename="libhector_gazebo_ros_gps.so">
       <alwaysOn>true</alwaysOn>
-      <updateRate>1.0</updateRate>
+      <updateRate>50.0</updateRate>
       <bodyName>base_link</bodyName>
       <topicName>fix</topicName>
       <frameId>base_link</frameId>
