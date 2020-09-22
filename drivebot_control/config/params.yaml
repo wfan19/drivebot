@@ -12,3 +12,5 @@ drivebot:
     right_wheel: ["rightFrontWheel_joint", "rightRearWheel_joint"]
     pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.03]
     twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.03]
+
+    odom_frame_id: "map"
