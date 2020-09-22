@@ -100,16 +100,16 @@
       <bodyName>base_link</bodyName>
       <topicName>imu</topicName>
       <serviceName>imu_service</serviceName>
-      <gaussianNoise>0.0</gaussianNoise>
+      <gaussianNoise>0.0001</gaussianNoise>
     </plugin>
 
     <plugin name="gps_plugin" filename="libhector_gazebo_ros_gps.so">
       <alwaysOn>true</alwaysOn>
-      <updateRate>50.0</updateRate>
+      <updateRate>1.0</updateRate>
       <bodyName>base_link</bodyName>
       <topicName>fix</topicName>
       <frameId>base_link</frameId>
-      <gaussianNoise>0.0</gaussianNoise>
+      <gaussianNoise>0.5</gaussianNoise>
     </plugin>
 
     <plugin name="base_link_p3d_plugin" filename="libgazebo_ros_p3d.so">
