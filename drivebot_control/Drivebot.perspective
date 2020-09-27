@@ -1,0 +1,622 @@
+{
+  "keys": {},
+  "groups": {
+    "pluginmanager": {
+      "keys": {
+        "running-plugins": {
+          "type": "repr",
+          "repr": "{u'rqt_plot/Plot': [1], u'rqt_publisher/Publisher': [1]}"
+        }
+      },
+      "groups": {
+        "plugin__rqt_rviz__RViz__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'RViz[*]'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "rviz_config_file": {
+                  "type": "repr",
+                  "repr": "u''"
+                },
+                "hide_menu": {
+                  "type": "repr",
+                  "repr": "u'false'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_reconfigure__Param__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget___plugincontainer_top_widget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Dynamic Reconfigure'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "expanded_nodes": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "splitter": {
+                  "type": "repr(QByteArray.hex)",
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff0000000100000002000000ae0000006401ffffffff010000000100')",
+                  "pretty-print": "         d     "
+                },
+                "selected_nodes": {
+                  "type": "repr",
+                  "repr": "[u'/drive_controller']"
+                },
+                "_splitter": {
+                  "type": "repr(QByteArray.hex)",
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000001000000020000012c000000640100000009010000000200')",
+                  "pretty-print": "       , d     "
+                },
+                "text": {
+                  "type": "repr",
+                  "repr": "u''"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_pose_view__PoseView__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__GLViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Pose View'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "view_matrix": {
+                  "type": "repr",
+                  "repr": "u'[[0.6359320282936096, 0.31864991784095764, -0.7028857469558716, 0.0], [-0.7713212370872498, 0.23233386874198914, -0.5925194025039673, 0.0], [-0.025501614436507225, 0.9189541935920715, 0.39353007078170776, 0.0], [-1.8905848264694214e-07, -2.999999523162842, -17.5, 1.0]]'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_plot__Plot__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'MatPlot'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "plot_type": {
+                  "type": "repr",
+                  "repr": "1"
+                },
+                "topics": {
+                  "type": "repr",
+                  "repr": "[u'/drivebot/odometry/filtered/map/twist/twist/linear/z', u'/drivebot/odometry/ground_truth/twist/twist/linear/z']"
+                },
+                "y_limits": {
+                  "type": "repr",
+                  "repr": "[-3.607587169536739, 100.0]"
+                },
+                "x_limits": {
+                  "type": "repr",
+                  "repr": "[0.0, 1.0]"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_plot__Plot__2": {
+          "keys": {},
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'MatPlot (2)'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "plot_type": {
+                  "type": "repr",
+                  "repr": "u'1'"
+                },
+                "topics": {
+                  "type": "repr",
+                  "repr": "u'/foilboat/target/altitudeTarget'"
+                },
+                "y_limits": {
+                  "type": "repr",
+                  "repr": "[u'-0.7912830216331592', u'4.126569747924805']"
+                },
+                "x_limits": {
+                  "type": "repr",
+                  "repr": "[u'118.08566130395195', u'119.08080720901489']"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_publisher__Publisher__2": {
+          "keys": {},
+          "groups": {
+            "plugin": {
+              "keys": {
+                "publishers": {
+                  "type": "repr",
+                  "repr": "u'[]'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_publisher__Publisher__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__PublisherWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "True"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u'Message Publisher'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "publishers": {
+                  "type": "repr",
+                  "repr": "u\"[{'type_name': 'geometry_msgs/Twist', 'topic_name': '/drivebot/drive_controller/cmd_vel', 'enabled': False, 'rate': 20.0, 'expressions': {u'/drivebot/drive_controller/cmd_vel/angular/z': '0', u'/drivebot/drive_controller/cmd_vel/linear/x': '1.5'}, 'publisher_id': 2, 'counter': 594}]\""
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_ez_publisher__EzPublisher__2": {
+          "keys": {},
+          "groups": {
+            "dock_widget__EzPublisherPluginUi": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u' (2)'"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "texts": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "publish_interval": {
+                  "type": "repr",
+                  "repr": "u'100'"
+                },
+                "configurable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                }
+              },
+              "groups": {}
+            }
+          }
+        },
+        "plugin__rqt_ez_publisher__EzPublisher__1": {
+          "keys": {},
+          "groups": {
+            "dock_widget__EzPublisherPluginUi": {
+              "keys": {
+                "dockable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                },
+                "parent": {
+                  "type": "repr",
+                  "repr": "None"
+                },
+                "dock_widget_title": {
+                  "type": "repr",
+                  "repr": "u''"
+                }
+              },
+              "groups": {}
+            },
+            "plugin": {
+              "keys": {
+                "texts": {
+                  "type": "repr",
+                  "repr": "[u'/drivebot/drive_controller/cmd_vel/linear/x', u'/drivebot/drive_controller/cmd_vel/angular/z']"
+                },
+                "publish_interval": {
+                  "type": "repr",
+                  "repr": "u'100'"
+                },
+                "configurable": {
+                  "type": "repr",
+                  "repr": "u'true'"
+                }
+              },
+              "groups": {
+                "drivebot": {
+                  "keys": {},
+                  "groups": {
+                    "leftWheel_position_controller": {
+                      "keys": {},
+                      "groups": {
+                        "command": {
+                          "keys": {
+                            "data_range": {
+                              "type": "repr",
+                              "repr": "(-1.0, 1.0)"
+                            },
+                            "data_is_repeat": {
+                              "type": "repr",
+                              "repr": "u'false'"
+                            }
+                          },
+                          "groups": {}
+                        }
+                      }
+                    },
+                    "rightFrontWheel_position_controller": {
+                      "keys": {},
+                      "groups": {
+                        "command": {
+                          "keys": {
+                            "data_range": {
+                              "type": "repr",
+                              "repr": "(-1.0, 1.0)"
+                            },
+                            "data_is_repeat": {
+                              "type": "repr",
+                              "repr": "u'false'"
+                            }
+                          },
+                          "groups": {}
+                        }
+                      }
+                    },
+                    "rightRearWheel_position_controller": {
+                      "keys": {},
+                      "groups": {
+                        "command": {
+                          "keys": {
+                            "data_range": {
+                              "type": "repr",
+                              "repr": "(-1.0, 1.0)"
+                            },
+                            "data_is_repeat": {
+                              "type": "repr",
+                              "repr": "u'false'"
+                            }
+                          },
+                          "groups": {}
+                        }
+                      }
+                    },
+                    "drive_controller": {
+                      "keys": {},
+                      "groups": {
+                        "cmd_vel": {
+                          "keys": {},
+                          "groups": {
+                            "angular": {
+                              "keys": {
+                                "z_is_repeat": {
+                                  "type": "repr",
+                                  "repr": "u'false'"
+                                },
+                                "z_range": {
+                                  "type": "repr",
+                                  "repr": "(-1.0, 1.0)"
+                                }
+                              },
+                              "groups": {}
+                            },
+                            "linear": {
+                              "keys": {
+                                "x_is_repeat": {
+                                  "type": "repr",
+                                  "repr": "u'false'"
+                                },
+                                "x_range": {
+                                  "type": "repr",
+                                  "repr": "(-1.0, 1.0)"
+                                }
+                              },
+                              "groups": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "rightWheel_position_controller": {
+                      "keys": {},
+                      "groups": {
+                        "command": {
+                          "keys": {
+                            "data_range": {
+                              "type": "repr",
+                              "repr": "(-1.0, 1.0)"
+                            },
+                            "data_is_repeat": {
+                              "type": "repr",
+                              "repr": "u'false'"
+                            }
+                          },
+                          "groups": {}
+                        }
+                      }
+                    },
+                    "leftRearWheel_position_controller": {
+                      "keys": {},
+                      "groups": {
+                        "command": {
+                          "keys": {
+                            "data_range": {
+                              "type": "repr",
+                              "repr": "(-1.0, 1.0)"
+                            },
+                            "data_is_repeat": {
+                              "type": "repr",
+                              "repr": "u'false'"
+                            }
+                          },
+                          "groups": {}
+                        }
+                      }
+                    },
+                    "leftFrontWheel_position_controller": {
+                      "keys": {},
+                      "groups": {
+                        "command": {
+                          "keys": {
+                            "data_range": {
+                              "type": "repr",
+                              "repr": "(-1.0, 1.0)"
+                            },
+                            "data_is_repeat": {
+                              "type": "repr",
+                              "repr": "u'false'"
+                            }
+                          },
+                          "groups": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "plane_ros": {
+                  "keys": {},
+                  "groups": {
+                    "target": {
+                      "keys": {
+                        "flapTrim_is_repeat": {
+                          "type": "repr",
+                          "repr": "u'false'"
+                        },
+                        "flapTrim_range": {
+                          "type": "repr",
+                          "repr": "(-0.2, 0.2)"
+                        }
+                      },
+                      "groups": {}
+                    }
+                  }
+                },
+                "clearpath": {
+                  "keys": {},
+                  "groups": {
+                    "servo0": {
+                      "keys": {},
+                      "groups": {
+                        "position_target": {
+                          "keys": {
+                            "data_range": {
+                              "type": "repr",
+                              "repr": "(-10000.0, -50.0)"
+                            },
+                            "data_is_repeat": {
+                              "type": "repr",
+                              "repr": "u'false'"
+                            }
+                          },
+                          "groups": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "rrbot": {
+                  "keys": {},
+                  "groups": {
+                    "joint2_position_controller": {
+                      "keys": {},
+                      "groups": {
+                        "command": {
+                          "keys": {
+                            "data_range": {
+                              "type": "repr",
+                              "repr": "(-1.0, 1.0)"
+                            },
+                            "data_is_repeat": {
+                              "type": "repr",
+                              "repr": "u'false'"
+                            }
+                          },
+                          "groups": {}
+                        }
+                      }
+                    },
+                    "joint1_position_controller": {
+                      "keys": {},
+                      "groups": {
+                        "command": {
+                          "keys": {
+                            "data_range": {
+                              "type": "repr",
+                              "repr": "(-1.0, 1.0)"
+                            },
+                            "data_is_repeat": {
+                              "type": "repr",
+                              "repr": "u'false'"
+                            }
+                          },
+                          "groups": {}
+                        }
+                      }
+                    }
+                  }
+                },
+                "arduino": {
+                  "keys": {},
+                  "groups": {
+                    "servo": {
+                      "keys": {
+                        "data_range": {
+                          "type": "repr",
+                          "repr": "(0, 200)"
+                        },
+                        "data_is_repeat": {
+                          "type": "repr",
+                          "repr": "u'false'"
+                        }
+                      },
+                      "groups": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "mainwindow": {
+      "keys": {
+        "geometry": {
+          "type": "repr(QByteArray.hex)",
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb000200000000051a00000051000009910000023d0000051a00000075000009910000023d00000000000000000a00')",
+          "pretty-print": "       Q   =   u   =     "
+        },
+        "state": {
+          "type": "repr(QByteArray.hex)",
+          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd0000000100000003000004780000019dfc0100000002fb00000058007200710074005f007000750062006c00690073006800650072005f005f005000750062006c00690073006800650072005f005f0031005f005f005000750062006c0069007300680065007200570069006400670065007401000000000000023d0000023d00fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0031005f005f00440061007400610050006c006f00740057006900640067006500740100000243000002350000013f00ffffff000004780000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')",
+          "pretty-print": "                 Xrqt_publisher__Publisher__1__PublisherWidget          Brqt_plot__Plot__1__DataPlotWidget                            6MinimizedDockWidgetsToolbar        "
+        }
+      },
+      "groups": {
+        "toolbar_areas": {
+          "keys": {
+            "MinimizedDockWidgetsToolbar": {
+              "type": "repr",
+              "repr": "8"
+            }
+          },
+          "groups": {}
+        }
+      }
+    }
+  }
+}
