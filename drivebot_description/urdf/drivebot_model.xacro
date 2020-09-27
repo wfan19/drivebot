@@ -109,14 +109,14 @@
       <bodyName>base_link</bodyName>
       <topicName>fix</topicName>
       <frameId>base_link</frameId>
-      <gaussianNoise>0.5</gaussianNoise>
+      <gaussianNoise>0.775</gaussianNoise>
     </plugin>
 
     <plugin name="base_link_p3d_plugin" filename="libgazebo_ros_p3d.so">
       <alwaysOn>true</alwaysOn>
       <updateRate>10.0</updateRate>
       <bodyName>base_link</bodyName>
-      <topicName>odometry/ground_truth</topicName>
+      <topicName>odometry/ground_truth/map</topicName>
       <frameName>map</frameName>
       <gaussianNoise>0.0</gaussianNoise>
     </plugin>
