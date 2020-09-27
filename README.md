@@ -22,9 +22,9 @@ To launch the movement controller, ekf, and rviz:
 
 Now, just boot up RQT, and start controlling the car through the `/drivebot/drive_controller/cmd_vel`
 
-## Bugs:
-- Car heading estimation is completely off when turning. It's reacts very slowly and then overshoots without correcting
-- Currently there appears to be some sort of lag in the ekf despite perfect sensor data at high frequencies, and low covariances on everything
+## TODO
+- Add a robot_localization config that uses wheel odometry and input (cmd_vel)
+
 
 ## Misc notes:
 - Gazebo starts paused, so you have to make sure to unpause it to run the simulation
