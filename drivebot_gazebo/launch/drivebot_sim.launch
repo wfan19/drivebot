@@ -6,6 +6,8 @@
   <param name="drivebot/robot_description"
          command="$(find xacro)/xacro --inorder '$(find drivebot_description)/urdf/drivebot_model.xacro'" />
 
+  <rosparam file="$(find drivebot_gazebo)/config/params.yaml" />
+
   <!-- gazebo_ros options -->
   <arg name="paused" default="true"/>
   <arg name="use_sim_time" default="true"/>
@@ -29,5 +31,7 @@
         output="screen"
         args="-urdf -model drivebot -param robot_description"
   />
+
+  <node name="groundtruth_remapper" pkg="drivebot_gazebo" type="groundtruth_remapper.py" args="groundtruth_remapper"/>
 
 </launch>

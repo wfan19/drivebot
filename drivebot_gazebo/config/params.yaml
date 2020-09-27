@@ -1,0 +1,3 @@
+groundtruth_remapper:
+  subscribe_to: /drivebot/odometry/ground_truth/map
+  publish_to: /drivebot/odometry/ground_truth/odom
